@@ -1,2 +1,2 @@
-# info-z-game
+# Doedle
 Info Z Kurs Game in JavaScript
