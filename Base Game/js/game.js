@@ -6,10 +6,11 @@ const absent = new Set();
 const misplaced = new Set();
 const exactMatch = new Set();
 var cnv
-
+let wordList
+            
 // Preload Word List into variable
 function preload() {
-    wordList = loadStrings('./lib/words.txt');
+    wordList = loadStrings('/lib/words.txt');
 }
 // Centers Canvas when called
 function centerCanvas() {
