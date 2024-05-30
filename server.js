@@ -63,15 +63,6 @@ function checkGuess(guess) {
             result.push('fail');
         }
     }
-    currentGuess += guess + ' ';
-    if (currentGuess.length / wordLength > currentRow) {
-        currentRow++;
-        createRow(currentRow);
-    }
-    if (currentRow === maxRows) {
-        io.emit('newWord', selectedWord.length);
-        resetBoard();
-    }
     return result;
 }
 
