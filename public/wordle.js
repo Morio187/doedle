@@ -100,10 +100,16 @@ function updatePlayerList(players) {
 }
 
 function resetBoard() {
-    currentGuess = '';
-    currentRow = 0;
-    createBoard();
-    createKeyboard();
+    function resetBoard() {
+        currentGuess = '';
+        currentRow = 0;
+        // Remove existing rows
+        while (board.firstChild) {
+            board.removeChild(board.firstChild);
+        }
+        createBoard();
+        createKeyboard();
+    }
 }
 
 document.addEventListener('keydown', (e) => {
