@@ -94,7 +94,6 @@ function handleKey(key) {
         // Do nothing if the focus is on chat input
         return;
     }
-
     if (key === 'Enter') {
         if (currentGuess.length === wordLength) {
             socket.emit('guess', currentGuess);

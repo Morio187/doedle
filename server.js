@@ -45,15 +45,15 @@ io.on('connection', (socket) => {
         const player = players[socket.id];
         if (!player) return;
 
-        const result = checkGuess(guess, player.selectedWord);
-        socket.emit('guessResult', { guess, result });
-
         if (guess === player.selectedWord) {
             player.points++;
             player.selectedWord = words[Math.floor(Math.random() * words.length)].trim();
             player.attempts = 0;
             socket.emit('newWord', player.selectedWord.length);
-        } else {
+        }
+        else if (words.includes(guess)){
+            const result = checkGuess(guess, player.selectedWord);
+            socket.emit('guessResult', {guess, result});
             player.attempts++;
             if (player.attempts >= 10) {
                 player.selectedWord = words[Math.floor(Math.random() * words.length)].trim();
@@ -61,7 +61,6 @@ io.on('connection', (socket) => {
                 socket.emit('newWord', player.selectedWord.length);
             }
         }
-
         io.emit('updatePlayers', Object.values(players));
     });
 
