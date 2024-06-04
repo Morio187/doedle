@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#nicknameInput {
+    margin-top: 20px;
+}
+
+#game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+}
+
+#boardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#board {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#board td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    font-size: 24px;
+}
+
+#keyboard {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.partial {
+    background-color: yellow;
+    color: black;
+}
+
+.fail {
+    background-color: gray;
+    color: white;
+}
+
+.key.success {
+    background-color: green;
+    color: white;
+}
+
+.key.partial {
+    background-color: yellow;
+    color: black;
+}
+
+.key.fail {
+    background-color: gray;
+    color: white;
+}
+
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+}
+
+.key {
+    margin: 2px;
+    padding: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    width: 40px;
+    text-align: center;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    height: 40px;
+    font-size: 16px;
+}
+
+.key:hover {
+    background-color: #ddd;
+}
+
+#sidePanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#players, #chat {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#chatMessages {
+    border: 1px solid #000;
+    width: 100%;
+    height: 150px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: white;
+}
+
+#chatInput {
+    width: 100%;
+}
+
+#players div {
+    margin-bottom: 5px;
+}
+
+#chatMessages div {
+    margin-bottom: 5px;
+}
+
+.key[data-key="Enter"], .key[data-key="Backspace"] {
+    width: 80px; /* Increase the width for Enter and Backspace */
+}
